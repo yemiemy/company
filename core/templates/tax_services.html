@@ -1,0 +1,49 @@
+{% extends 'commons/base.html' %} {% load static %} {% block content %}
+
+<div id="hw-hero">
+    {% include 'commons/navbar.html' %}
+    <!-- PAGE HEADER -->
+    <div id="page-header">
+        <div class="title-breadcrumbs">
+            <h1>{{page_header}}</h1>
+            <div class="thebreadcumb">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">{{page_header}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END OF PAGE HEADER -->
+</div>
+
+<section class="content blog">
+    <div class="row">
+        <div class="col-sm-12">
+            {% for object in object_list %}
+            <!-- Blog Post-->
+            <article>
+                <div class="shadow-effect">
+                    <div class="post-content">
+                        <h2>{{ object.title }}</h2>
+                        <hr />
+                        <p>{{ object.body | safe }}</p>
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+            <article>
+                <div class="shadow-effect">
+                    <div class="post-content">
+                        <hr />
+                        <p>No content to show.</p>
+                    </div>
+                </div>
+            </article>
+            <!-- End of Blog Post-->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include 'commons/footer.html' %} {% endblock content %}

@@ -1,0 +1,63 @@
+<script>
+    let isRecaptchaValidated = false;
+
+    function toggleRecaptchaFormMessage(type = "error", hide = false) {
+      document.getElementById(`recaptcha-form-${type}`).style.display = hide
+        ? "none"
+        : "inherit";
+    }
+
+    function onRecaptchaSuccess() {
+      isRecaptchaValidated = true;
+    }
+
+    function onRecaptchaError() {
+      toggleRecaptchaFormMessage("error");
+      toggleRecaptchaFormMessage("success", true);
+    }
+
+    function onRecaptchaResponseExpiry() {
+      onRecaptchaError();
+    }
+
+    window.onload = function () {
+      const recaptchaForm = document.getElementById("recaptcha-form");
+      recaptchaForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // failure
+        if (!isRecaptchaValidated) {
+          toggleRecaptchaFormMessage("error");
+          toggleRecaptchaFormMessage("success", true);
+          return;
+        }
+
+        // success
+        const form = e.target
+        const formData = new FormData(form)
+        const url = form.getAttribute("action")
+        const method = form.getAttribute("method")
+
+        const xhr = new XMLHttpRequest()
+        xhr.responseType = "json"
+        xhr.open(method, url)
+        xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest")
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+        xhr.onload = function (){
+          if(xhr.status === 200){
+            form.reset()
+            toggleRecaptchaFormMessage("error", true);
+            toggleRecaptchaFormMessage("success");
+          }else{
+            alert("An error occured. Please try again")
+            console.log(xhr.response, xhr.status)
+          }
+        }
+        xhr.onerror = function () {
+          alert("An error occured. Please try again")
+          console.log(xhr.response, xhr.status)
+        }
+        xhr.send(formData) 
+      });
+    };
+  </script>

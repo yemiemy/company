@@ -1,0 +1,85 @@
+{% load static %}
+<div class="header header1">
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="phone">
+                    <li>
+                        <span class="typcn typcn-phone-outline"></span>
+                        +16473030219
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul class="toplinks">
+                    <li>MON - FRI 11:00 - 19:00</li>
+                    <li>
+                        <a href="mailto:dkcconsultin@gmail.com"
+                            >dkcconsultin@gmail.com</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END OF TOP BAR -->
+
+    <!-- LOGO & NAVIGATION -->
+    <div class="header-navigation">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="logonav">
+                    <div class="row no-gutter">
+                        <div class="col-sm-3">
+                            <div class="logo">
+                                <a href="{% url 'home' %}"
+                                    ><img
+                                        src=" {% static 'images/logo_white_bg_cp.png' %} "
+                                        alt=""
+                                /></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <nav id="desktop-menu">
+                                <ul class="sf-menu" id="navigation">
+                                    <li class="{{home_current}}">
+                                        <a href="{% url 'home' %}">Home</a>
+                                    </li>
+                                    <li class="{{tax_info_current}}">
+                                        <a href="{% url 'tax_info' %}"
+                                            >Tax Information</a
+                                        >
+                                    </li>
+                                    <li class="{{tax_tools_current}}">
+                                        <a href="{% url 'tax_tools' %}"
+                                            >Tax Tools</a
+                                        >
+                                    </li>
+                                    <li class="{{about_current}}">
+                                        <a href="{% url 'about' %}">About Us</a>
+                                    </li>
+                                    <li class="{{contact_current}}">
+                                        <a href="{% url 'contact' %}"
+                                            >Contact</a
+                                        >
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF LOGO & NAVIGATION -->
+</div>
