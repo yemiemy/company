@@ -217,11 +217,7 @@ section h2 span {color:#000000;}
 
 /* ABOUT US */
 section.aboutus {background: #eaedf2 url(../images/aboutusbg.jpg) top right; min-height:895px; padding-top:215px;}
-section.aboutus hr.small { border: solid #000000; border-width: 2px 0 0; clear: both; height: 0; margin:21px 0 42px; max-width:100px;}
 section.aboutus h2 {margin-bottom:25px; text-align: left;}
-section.aboutus h4 {font-weight:300; font-size:30px; margin-bottom:35px;}
-section.aboutus a.btn.btn-default {margin-top:20px; -webkit-transition: all 0.3s ease-in-out;  -moz-transition: all 0.3s ease-in-out;  transition: all 0.3s ease-in-out;   border: 1px solid #fff; border-radius:4px; background:#000000; color:#fff; font-size:14px; letter-spacing: .06em; font-weight:400; padding: 7px 18px 8px; text-shadow:none;}
-section.aboutus a.btn.btn-default:hover { background: #ffffff; color: #000000;  border: 1px solid #000000; }
 
 /* TESTIMONIALS 1 */
 section.testimonials {padding-top:15px;}
