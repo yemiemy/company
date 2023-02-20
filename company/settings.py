@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-# import json
+import json
 
-# with open('/etc/config.json') as config_file:
-#     config = json.load(config_file)
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
 
 from pathlib import Path
 
@@ -141,5 +141,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = config.get("EMAIL_USER") #os.environ.get('EMAIL_USER')
-# EMAIL_HOST_PASSWORD = config.get("EMAIL_PASS") #os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = config.get("EMAIL_USER") #os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config.get("EMAIL_PASS") #os.environ.get('EMAIL_PASS')
