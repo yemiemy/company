@@ -1,8 +1,6 @@
 from core.views import (
-    home, 
-    contact, 
-    services, 
-    faq, 
+    home,
+    contact,
     about,
     tax_info,
     tax_tools,
@@ -20,8 +18,6 @@ urlpatterns = [
     path('tax-tools/', tax_tools, name="tax_tools"),
     path('about/', about, name="about"),
     path('contact/', contact, name="contact"),
-    path('services/', services, name="services"),
-    path('faq/', faq, name="faq"),
     path('leave-a-review/', create_testimonial, name="create_testimonial"),
     path('ckeditor/', include('ckeditor_uploader.urls'))
 ]
