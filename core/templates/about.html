@@ -1,226 +1,404 @@
-{% extends 'commons/base.html' %}
-{% load static %}
+{% extends 'commons/base.html' %} {% load static %} {% block content %}
 
-{% block content %}
-
-  <div id="hw-hero">
+<div id="hw-hero">
     {% include 'commons/navbar.html' %}
 
- <!-- PAGE HEADER -->
+    <!-- PAGE HEADER -->
     <div id="page-header">
-   <div class="title-breadcrumbs">
-   <h1>ABOUT US</h1>
-   <div class="thebreadcumb">
-    <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="active">About</li>
-    </ul>
-   </div>
-   </div>
-
+        <div class="title-breadcrumbs">
+            <h1>ABOUT US</h1>
+            <div class="thebreadcumb">
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="active">About</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- END OF PAGE HEADER -->
-  </div>
+</div>
 
- <section class="introtext about1">
+<section class="introtext about1">
     <div class="row">
-      <div class="col-sm-12">
-        <h2>DISCOVER THE <span>FINANCIAL KEYS</span> TO GROW SUCCESSFULLY</h2>
-        <p class="text-center"> Our priority is for your business to grow beyond measure. We are mould builders. Your business and personal success is our committment.
-          </p>
-      <hr class="small"/>
-      </div>
+        <div class="col-sm-12">
+            <h2>
+                DISCOVER THE <span>FINANCIAL KEYS</span> TO GROW SUCCESSFULLY
+            </h2>
+            <p class="text-center">
+                Our priority is for your business to grow beyond measure. We are
+                mould builders. Your business and personal success is our
+                committment.
+            </p>
+            <hr class="small" />
+        </div>
     </div>
 
-<!-- NUMBERS -->
-<div class="about1-numbers">
-      <div class="row">
-        <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number lightgray">1</div>
+    <!-- NUMBERS -->
+    <div class="about1-numbers">
+        <div class="row">
+            <div
+                class="col-sm-4 wow fadeInUp"
+                data-wow-duration="1000ms"
+                data-wow-delay="300ms"
+            >
+                <div class="shadow-effect">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="number lightgray">1</div>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <h4>Tax Preparation</h4>
+                            <p>
+                                Helping you in a timely and correct manner with
+                                your personal and company tax issues.
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>Tax Preparation</h4>
-              <p>Helping you in a timely and correct manner with your personal and company tax issues.</p>
-              <br/>
-            </div>
-          </div>
-          </div>
-        </div>
 
-        <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-         <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number blue">2</div>
+            <div
+                class="col-sm-4 wow fadeInUp"
+                data-wow-duration="1000ms"
+                data-wow-delay="500ms"
+            >
+                <div class="shadow-effect">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="number blue">2</div>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <h4>Bookkeeping</h4>
+                            <p>
+                                At DKC, We can take this off your To-Do List so
+                                that you can focus on your business profit
+                                maximization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>Bookkeeping</h4>
-              <p>At DKC, We can take this off your To-Do List so that you can focus on your business profit maximization.</p>
-            </div>
-          </div>
-          </div>
-        </div>
 
-        <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms">
-         <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number green">3</div>
+            <div
+                class="col-sm-4 wow fadeInUp"
+                data-wow-duration="1000ms"
+                data-wow-delay="700ms"
+            >
+                <div class="shadow-effect">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="number green">3</div>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <h4>Payroll</h4>
+                            <p>
+                                Handle your company payroll and other government
+                                deductions.
+                            </p>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>Payroll</h4>
-              <p>Handle your company payroll and other government deductions.</p>
-              <br/>
-              <br />
-            </div>
-            </div>
-          </div>
         </div>
-      </div>
-      </div>
-<!-- END OF NUMBERS -->
+    </div>
+    <!-- END OF NUMBERS -->
 </section>
 
 <!-- SLIDER / ACCORDION -->
 <section class="about1-slider-accordion">
-<div class="row">
-<div class="col-md-6">
-<div id="about1-slider">
-<img src=" {% static 'images/about1-slider1.jpg' %} " alt="">
-<img src=" {% static 'images/about1-slider2.jpg' %} " alt="">
-<img src=" {% static 'images/about1-slider3.jpg' %} " alt="">
-</div>
-    <!-- END OF SLIDER -->
-</div>
-<div class="col-md-6">
-
-    <!-- ACCORDION -->
-<div id="accordion" class="style2 panel-group">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="about1-slider">
+                <img src=" {% static 'images/about1-slider1.jpg' %} " alt="" />
+                <img src=" {% static 'images/about1-slider2.jpg' %} " alt="" />
+                <img src=" {% static 'images/about1-slider3.jpg' %} " alt="" />
+            </div>
+            <!-- END OF SLIDER -->
+        </div>
+        <div class="col-md-6">
+            <!-- ACCORDION -->
+            <div id="accordion" class="style2 panel-group">
                 <div class="panel panel-default">
-
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-minus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-1">Tax Preparation</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                      <p>
-                        <b>Corporation/Company taxes:</b> We can help your company file their annual taxes with easy. <br />
-                        <b>Personal/Individual Taxes:</b> We are CRA compliance, we can help with your Personal income tax, We would ensure you receive your tax return <br />
-                        <b>HST/GST Taxes:</b> Use DKC experts to help you calculate and file your annual HST/GST.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-minus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-1"
+                                >Tax Preparation</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div
+                        id="collapse-style2-1"
+                        class="panel-collapse collapse in"
+                    >
+                        <div class="panel-body">
+                            <p>
+                                <b>Corporation/Company taxes:</b> We can help
+                                your company file their annual taxes with easy.
+                                <br />
+                                <b>Personal/Individual Taxes:</b> We are CRA
+                                compliance, we can help with your Personal
+                                income tax, We would ensure you receive your tax
+                                return <br />
+                                <b>HST/GST Taxes:</b> Use DKC experts to help
+                                you calculate and file your annual HST/GST.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-2">Bookkeeping</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>
-                        As a business owner, you must have accounting records. 
-                        At DKC, We can take this off your To-Do List so that you can focus on your business profit maximization.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-plus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-2"
+                                >Bookkeeping</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div id="collapse-style2-2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                As a business owner, you must have accounting
+                                records. At DKC, We can take this off your To-Do
+                                List so that you can focus on your business
+                                profit maximization.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-3">Payroll</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>
-                        Both Your Business and Employees needs payroll. 
-                        At DKC we can help you setup payroll to easy your business pressure. Let us handle your company payroll and other government deductions.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-plus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-3"
+                                >Payroll</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div id="collapse-style2-3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                Both Your Business and Employees needs payroll.
+                                At DKC we can help you setup payroll to easy
+                                your business pressure. Let us handle your
+                                company payroll and other government deductions.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-4">Accounting</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-4" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>
-                        <b>Financial Statement/Financial Reporting:</b> We would help you and your business see where you are so you can make informed decisions about where you're going. This will be based on approved standards of reporting. <br />
-                        <b>Budgeting/Forecasting:</b> With everything that's involved in running your business it's easy to overlook a small detail and have it turn into a big problem.  Having a budget or a forecast can help you save money and give you and your business peace of mind.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-plus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-4"
+                                >Accounting</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div id="collapse-style2-4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Financial Statement/Financial Reporting:</b>
+                                We would help you and your business see where
+                                you are so you can make informed decisions about
+                                where you're going. This will be based on
+                                approved standards of reporting. <br />
+                                <b>Budgeting/Forecasting:</b> With everything
+                                that's involved in running your business it's
+                                easy to overlook a small detail and have it turn
+                                into a big problem. Having a budget or a
+                                forecast can help you save money and give you
+                                and your business peace of mind.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-5">Financing/Loan</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-5" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>
-                        <b>Mortgage/Financing:</b> We can help you in your intended or existing mortgage with professional advice/guidance. We can finance your home/basement renovation.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-plus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-5"
+                                >Financing/Loan</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div id="collapse-style2-5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Mortgage/Financing:</b> We can help you in
+                                your intended or existing mortgage with
+                                professional advice/guidance. We can finance
+                                your home/basement renovation.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion.style2" href="#collapse-style2-6">Financing/Loan</a></h4>
-                  </div>
-
-                  <div id="collapse-style2-6" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>
-                        <b>Business registration and development:</b> Corporate, individual, charities, Non- government, churches and associations and business Plan: We can help you organize steps by steps needed to have a successful business growth. <br />
-                        <b>Consulting:</b> Have a business question or idea but not having the time to look into it?  Talk to us, we will work with you to find the solution. <br />
-                        <b>Training:</b> Let us help in training your employees or you on accounting software packages: QuickBooks, both Desktop and online, Payroll and Spread sheet. <br />
-                        <b>CRA Audit/Tax court:</b> Our league of professionals knows the language of Canada Revenue Service and they can help you out at every level.
-                      </p>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i
+                                class="indicator fa fa-plus-square-o pull-left"
+                            ></i
+                            ><a
+                                data-toggle="collapse"
+                                data-parent="#accordion.style2"
+                                href="#collapse-style2-6"
+                                >Financing/Loan</a
+                            >
+                        </h4>
                     </div>
-                  </div>
+
+                    <div id="collapse-style2-6" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Business registration and development:</b>
+                                Corporate, individual, charities, Non-
+                                government, churches and associations and
+                                business Plan: We can help you organize steps by
+                                steps needed to have a successful business
+                                growth. <br />
+                                <b>Consulting:</b> Have a business question or
+                                idea but not having the time to look into it?
+                                Talk to us, we will work with you to find the
+                                solution. <br />
+                                <b>Training:</b> Let us help in training your
+                                employees or you on accounting software
+                                packages: QuickBooks, both Desktop and online,
+                                Payroll and Spread sheet. <br />
+                                <b>CRA Audit/Tax court:</b> Our league of
+                                professionals knows the language of Canada
+                                Revenue Service and they can help you out at
+                                every level.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-                  <!-- END OF ACCORDION -->
-</div>
-</div>
+            </div>
+            <!-- END OF ACCORDION -->
+        </div>
+    </div>
 </section>
 
+<!-- TEAM -->
+<section class="about1-team">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>WHAT <span>WE DO</span></h2>
+            <p>
+                Accounting services are a vital component of any business, large
+                or small. These services include the recording, classifying, and
+                analyzing of financial transactions, as well as the preparation
+                of financial reports and statements. The main goal of accounting
+                services is to provide accurate and timely financial information
+                that can be used to make informed business decisions.
+            </p>
+            <p>
+                One of the most important services provided by DKC is
+                bookkeeping. This includes the process of recording financial
+                transactions, such as sales, purchases, and payments, in a
+                systematic manner. This information is then used to prepare
+                financial statements, such as balance sheets and income
+                statements, which provide a snapshot of a company's financial
+                position and performance.
+            </p>
+            <p>
+                Another important service provided by DKC is tax preparation and
+                filing. This includes the preparation of federal and Provincial
+                tax returns, HST/GST as well as the filing of these returns with
+                CRA. DKC also provides tax planning services, which can help
+                Individual, and businesses minimize their tax liability and
+                maximize their profits.
+            </p>
+            <p>
+                Auditing is another important service provided by DKC. This
+                includes the independent examination of a company's financial
+                statements, to ensure that they are accurate and comply with
+                generally accepted accounting principles (GAAP). Auditing
+                services can help businesses identify and correct any errors or
+                inconsistencies in their financial statements and can also help
+                ensure that the company is in compliance with relevant laws and
+                regulations.
+            </p>
+            <p>
+                In addition to traditional accounting services provided by DKC,
+                we also provide consulting services. This includes assistance
+                with financial planning, budgeting, and forecasting, as well as
+                help with strategic planning and business development.
+                Consulting services can help businesses identify opportunities
+                for growth and develop effective strategies to achieve their
+                goals.
+            </p>
+            <p>
+                At DKC, technology also played an increasingly important role in
+                our services, with how we are offering cloud-based accounting
+                solutions. This allows our clients accessing their business
+                financial information from anywhere and at any time. This also
+                improves collaboration between DKC and our clients. Cloud-based
+                accounting solutions is core practice of DKC to her clients.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- END OF ABOUT -->
 
-  <div class="spacing-65"></div>
+<div class="spacing-65"></div>
 
-  {% include 'commons/footer.html' %}
+{% include 'commons/footer.html' %} {% include 'commons/scripts.html' %}
 
-  {% include 'commons/scripts.html' %}
-
- <script>
-   jQuery(document).ready(function($) {
-      "use strict";
+<script>
+    jQuery(document).ready(function ($) {
+        "use strict";
 
         //  HEADER SLIDER HOOK
-        $('#about1-slider').owlCarousel({
-          loop: true,
-          items: 1,
-          margin: 0,
-          autoplay: true,
-          autoplayTimeout: 8500,
-          animateIn: 'fadeIn',
-          animateOut: 'bounceOut',
-          lazyLoad: true,
+        $("#about1-slider").owlCarousel({
+            loop: true,
+            items: 1,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 8500,
+            animateIn: "fadeIn",
+            animateOut: "bounceOut",
+            lazyLoad: true,
         });
-
- });
-  </script>
+    });
+</script>
 
 {% endblock content %}

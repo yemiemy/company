@@ -14,12 +14,15 @@ def home(request):
     }
     return render(request, "index.html", context)
 
+
 def services(request):
     return render(request, "services.html")
-    
+
+
 def about(request):
     return render(request, "about.html")
-    
+
+
 def contact(request):
     if request.method == "POST":
         name = request.POST.get("name", "Anonymous Contact")
@@ -63,11 +66,13 @@ def contact(request):
         'news': New.objects.order_by('-created_at')
     })
 
+
 def about(request):
     return render(request, "about.html", {
         'about_current': 'current',
         'news': New.objects.order_by('-created_at')
     })
+
 
 def tax_info(request):
     context = {
@@ -77,6 +82,7 @@ def tax_info(request):
         'object_list': TaxInformation.objects.order_by('-id')
     }
     return render(request, "tax_services.html", context)
+
 
 def tax_tools(request):
     context = {
@@ -99,9 +105,6 @@ def create_testimonial(request):
         'news': New.objects.order_by('-created_at')
     })
 
-
-def faq(request):
-    return render(request, "faq.html")
 
 def page404(request):
     return render(request, "404.html")
