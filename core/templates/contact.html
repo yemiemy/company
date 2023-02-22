@@ -1,179 +1,424 @@
-{% extends 'commons/base.html' %}
-{% load static %}
-
-{% block content %}
-  <div id="hw-hero">
+{% extends 'commons/base.html' %} {% load static %} {% block content %}
+<div id="hw-hero">
     {% include 'commons/navbar.html' %}
 
     <!-- PAGE HEADER -->
     <div id="page-header">
-  <div class="title-breadcrumbs">
-  <h1>CONTACT</h1>
-  <div class="thebreadcumb">
-    <ul class="breadcrumb">
-        
-    </ul>
-  </div>
-  </div>
-
+        <div class="title-breadcrumbs">
+            <h1>CONTACT</h1>
+            <div class="thebreadcumb">
+                <ul class="breadcrumb"></ul>
+            </div>
+        </div>
     </div>
     <!-- END OF PAGE HEADER -->
-  </div>
+</div>
 
- <!--  ICON BOXES -->
+<!--  ICON BOXES -->
 <div class="about1-numbers contact">
-      <div class="row">
-
+    <div class="row">
         <div class="col-sm-4">
-        <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number lightgray"><span class="typcn typcn-mail"></span></div>
+            <div class="shadow-effect">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <div class="number lightgray">
+                            <span class="typcn typcn-mail"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <h4>DROP US A LINE</h4>
+                        <p>
+                            Would you like to work with us? Do you have a
+                            project in mind and you need the best finance team?
+                        </p>
+                        <span
+                            ><a href="mailto:dkcconsultin@gmail.com"
+                                >dkcconsultin@gmail.com</a
+                            ></span
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>DROP US A LINE</h4>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
-              <span><a href="">CONTACT@GOOGROWTH.COM</a></span>
-            </div>
-          </div>
-          </div>
         </div>
 
         <div class="col-sm-4">
-         <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number blue"><span class="typcn typcn-heart"></span></div>
+            <div class="shadow-effect">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <div class="number blue">
+                            <span class="typcn typcn-heart"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <h4>ASK FOR SUPPORT</h4>
+                        <p>
+                            We are here to help with any financial questions you
+                            may have.
+                        </p>
+                        <span
+                            ><a href="mailto:dkcconsultin@gmail.com"
+                                >dkcconsultin@gmail.com</a
+                            ></span
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>ASK FOR SUPPORT</h4>
-              <p>Dynamically procrastinate B2C users after installed base benefits efficiently.</p>
-              <span><a href="">SUPPORT@GOOGROWTH.COM</a></span>
-            </div>
-          </div>
-          </div>
         </div>
 
         <div class="col-sm-4">
-         <div class="shadow-effect">
-          <div class="row">
-            <div class="col-sm-12 col-md-3">
-              <div class="number green"><span class="typcn typcn-location"></span></div>
+            <div class="shadow-effect">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <div class="number green">
+                            <span class="typcn typcn-location"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <h4>VISIT OUR OFFICES</h4>
+                        <p>Niagara Falls,<br />Ontario Canada</p>
+                        <span>Call us: +16473030219</span>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-              <h4>VISIT OUR OFFICES</h4>
-              <p>4771 West Field Mint<br/>Salt Lake City,<br/>UT 72883</p>
-              <span>Call us: 800.1148.800</span>
-            </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      </div>
+    </div>
+</div>
 <!--  END OF ICON BOXES -->
 
 <!--  FORM -->
-  <section class="contact-form">
+<section class="contact-form">
     <div class="row">
-      <div class="col-sm-12">
-        <h2>SEND US A <span>MESSAGE</span></h2>
-        <hr class="small"/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-      <div id="sendstatus"></div>
-
-        <div id="contactform">
-          <form method="post" action="{% url 'contact' %}" id="recaptcha-form">
-            <!-- Recaptcha Success -->
-            <div id="recaptcha-form-success" style="display: none" class="alert alert-success" role="alert">
-              Your message has been sent successfully. 
-            </div>
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-sm-6">
-                <p><label for="name">Name:*</label> <input type="text" class="form-control" name="name" id="name" tabindex="1" required/></p>
-                <p><label for="email">Email:*</label> <input type="text" class="form-control" name="email" id="email" tabindex="2" required/></p>
-                <p><label for="phone">Phone Number:*</label> <input type="text" class="form-control" name="phone" id="phone" tabindex="3" required /></p>
-              </div>
-              <div class="col-sm-6">
-                <p><label for="message">Message:*</label> <textarea  class="form-control" name="message" id="message" tabindex="4" required minlength="5"></textarea></p>
-              </div>
-            </div>
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LdLhE4kAAAAAK6nzfrPlRdwch5t8KDgl52y7LKh"
-              data-callback="onRecaptchaSuccess"
-            data-expired-callback="onRecaptchaResponseExpiry"
-            data-error-callback="onRecaptchaError"
-            >
-            </div>
-            <!-- Recaptcha Error -->
-            <div id="recaptcha-form-error" style="display: none; color: red">
-              Please fill the recaptcha checkbox.
-            </div>
-            <p><input name="submit" type="submit" id="submit" class="submit" value="Send" tabindex="5" /></p>
-          </form>
+        <div class="col-sm-12">
+            <h2>SEND US A <span>MESSAGE</span></h2>
+            <hr class="small" />
         </div>
-      </div>
-      
     </div>
-  </section>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="sendstatus"></div>
+
+            <div id="contactform">
+                <form
+                    method="post"
+                    action="{% url 'contact' %}"
+                    id="recaptcha-form"
+                >
+                    <!-- Recaptcha Success -->
+                    <div
+                        id="recaptcha-form-success"
+                        style="display: none"
+                        class="alert alert-success"
+                        role="alert"
+                    >
+                        Your message has been sent successfully.
+                    </div>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                <label for="name">Name:*</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="name"
+                                    id="name"
+                                    tabindex="1"
+                                    required
+                                />
+                            </p>
+                            <p>
+                                <label for="email">Email:*</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="email"
+                                    id="email"
+                                    tabindex="2"
+                                    required
+                                />
+                            </p>
+                            <p>
+                                <label for="phone">Phone Number:*</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="phone"
+                                    id="phone"
+                                    tabindex="3"
+                                    required
+                                />
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                <label for="message">Message:*</label>
+                                <textarea
+                                    class="form-control"
+                                    name="message"
+                                    id="message"
+                                    tabindex="4"
+                                    required
+                                    minlength="5"
+                                ></textarea>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="g-recaptcha"
+                        data-sitekey="6LdLhE4kAAAAAK6nzfrPlRdwch5t8KDgl52y7LKh"
+                        data-callback="onRecaptchaSuccess"
+                        data-expired-callback="onRecaptchaResponseExpiry"
+                        data-error-callback="onRecaptchaError"
+                    ></div>
+                    <!-- Recaptcha Error -->
+                    <div
+                        id="recaptcha-form-error"
+                        style="display: none; color: red"
+                    >
+                        Please fill the recaptcha checkbox.
+                    </div>
+                    <p>
+                        <input
+                            name="submit"
+                            type="submit"
+                            id="submit"
+                            class="submit"
+                            value="Send"
+                            tabindex="5"
+                        />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 <!--  END OF FORM -->
 
-{% include 'commons/footer.html' %}
-{% include 'commons/recaptchaScript.html' %}
+{% include 'commons/footer.html' %} {% include 'commons/recaptchaScript.html' %}
 <script>
-      function initMap() {
-        var mapDiv = document.getElementById('map_canvas');
-        var myLatLng = {lat: 40.698752, lng: -112.032163};
+    function initMap() {
+        var mapDiv = document.getElementById("map_canvas");
+        var myLatLng = { lat: 40.698752, lng: -112.032163 };
         var map = new google.maps.Map(mapDiv, {
-         center: myLatLng,
-          zoom: 10,
-     scrollwheel: false,
-     draggable: false,
-     mapTypeControl: true,
-    mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-        position: google.maps.ControlPosition.TOP_RIGHT
-    },
-    zoomControl: true,
-    zoomControlOptions: {
-        position: google.maps.ControlPosition.LEFT_TOP
-    },
-    scaleControl: true,
-    streetViewControl: true,
-    streetViewControlOptions: {
-        position: google.maps.ControlPosition.LEFT_TOP
-    }
-
+            center: myLatLng,
+            zoom: 10,
+            scrollwheel: false,
+            draggable: false,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_RIGHT,
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP,
+            },
+            scaleControl: true,
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP,
+            },
         });
-var image = "{% static 'images/map-pin.png' %}";
-var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-     icon: image
-  });
-marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
+        var image = "{% static 'images/map-pin.png' %}";
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: image,
+        });
+        marker.addListener("click", function () {
+            infowindow.open(map, marker);
+        });
 
+        var contentString =
+            '<div id="content">' +
+            "<h4>DKC Consulting</h4>" +
+            '<div id="bodyContent">' +
+            "<p>Completely synthesize principle-centered information after ethical communities.</p></div>";
 
-var contentString = '<div id="content">'+
-      '<h4>Good Growth</h4>'+
-      '<div id="bodyContent">'+
-      '<p>Completely synthesize principle-centered information after ethical communities.</p></div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+        });
 
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
+        map.set("styles", [
+            {
+                featureType: "administrative",
+                elementType: "all",
+                stylers: [{ visibility: "on" }, { lightness: 33 }],
+            },
+            {
+                featureType: "administrative",
+                elementType: "labels",
+                stylers: [{ saturation: "-100" }],
+            },
+            {
+                featureType: "administrative",
+                elementType: "labels.text",
+                stylers: [{ gamma: "0.75" }],
+            },
+            {
+                featureType: "administrative.neighborhood",
+                elementType: "labels.text.fill",
+                stylers: [{ lightness: "-37" }],
+            },
+            {
+                featureType: "landscape",
+                elementType: "geometry",
+                stylers: [{ color: "#f9f9f9" }],
+            },
+            {
+                featureType: "landscape.man_made",
+                elementType: "geometry",
+                stylers: [
+                    { saturation: "-100" },
+                    { lightness: "40" },
+                    { visibility: "off" },
+                ],
+            },
+            {
+                featureType: "landscape.natural",
+                elementType: "labels.text.fill",
+                stylers: [{ saturation: "-100" }, { lightness: "-37" }],
+            },
+            {
+                featureType: "landscape.natural",
+                elementType: "labels.text.stroke",
+                stylers: [
+                    { saturation: "-100" },
+                    { lightness: "100" },
+                    { weight: "2" },
+                ],
+            },
+            {
+                featureType: "landscape.natural",
+                elementType: "labels.icon",
+                stylers: [{ saturation: "-100" }],
+            },
+            {
+                featureType: "poi",
+                elementType: "geometry",
+                stylers: [{ saturation: "-100" }, { lightness: "80" }],
+            },
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [{ saturation: "-100" }, { lightness: "0" }],
+            },
+            {
+                featureType: "poi.attraction",
+                elementType: "geometry",
+                stylers: [{ lightness: "-4" }, { saturation: "-100" }],
+            },
+            {
+                featureType: "poi.park",
+                elementType: "geometry",
+                stylers: [
+                    { color: "#c5dac6" },
+                    { visibility: "on" },
+                    { saturation: "-95" },
+                    { lightness: "62" },
+                ],
+            },
+            {
+                featureType: "poi.park",
+                elementType: "labels",
+                stylers: [{ visibility: "on" }, { lightness: 20 }],
+            },
+            {
+                featureType: "road",
+                elementType: "all",
+                stylers: [{ lightness: 20 }],
+            },
+            {
+                featureType: "road",
+                elementType: "labels",
+                stylers: [{ saturation: "-100" }, { gamma: "1.00" }],
+            },
+            {
+                featureType: "road",
+                elementType: "labels.text",
+                stylers: [{ gamma: "0.50" }],
+            },
+            {
+                featureType: "road",
+                elementType: "labels.icon",
+                stylers: [{ saturation: "-100" }, { gamma: "0.50" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "geometry",
+                stylers: [{ color: "#c5c6c6" }, { saturation: "-100" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "geometry.stroke",
+                stylers: [{ lightness: "-13" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "labels.icon",
+                stylers: [{ lightness: "0" }, { gamma: "1.09" }],
+            },
+            {
+                featureType: "road.arterial",
+                elementType: "geometry",
+                stylers: [
+                    { color: "#e4d7c6" },
+                    { saturation: "-100" },
+                    { lightness: "47" },
+                ],
+            },
+            {
+                featureType: "road.arterial",
+                elementType: "geometry.stroke",
+                stylers: [{ lightness: "-12" }],
+            },
+            {
+                featureType: "road.arterial",
+                elementType: "labels.icon",
+                stylers: [{ saturation: "-100" }],
+            },
+            {
+                featureType: "road.local",
+                elementType: "geometry",
+                stylers: [{ color: "#fbfaf7" }, { lightness: "77" }],
+            },
+            {
+                featureType: "road.local",
+                elementType: "geometry.fill",
+                stylers: [{ lightness: "-5" }, { saturation: "-100" }],
+            },
+            {
+                featureType: "road.local",
+                elementType: "geometry.stroke",
+                stylers: [{ saturation: "-100" }, { lightness: "-15" }],
+            },
+            {
+                featureType: "transit.station.airport",
+                elementType: "geometry",
+                stylers: [{ lightness: "47" }, { saturation: "-100" }],
+            },
+            {
+                featureType: "water",
+                elementType: "all",
+                stylers: [{ visibility: "on" }, { color: "#acbcc9" }],
+            },
+            {
+                featureType: "water",
+                elementType: "geometry",
+                stylers: [{ saturation: "53" }],
+            },
+            {
+                featureType: "water",
+                elementType: "labels.text.fill",
+                stylers: [{ lightness: "-42" }, { saturation: "17" }],
+            },
+            {
+                featureType: "water",
+                elementType: "labels.text.stroke",
+                stylers: [{ lightness: "61" }],
+            },
+        ]);
+    }
+</script>
 
-map.set('styles',[{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"administrative","elementType":"labels","stylers":[{"saturation":"-100"}]},{"featureType":"administrative","elementType":"labels.text","stylers":[{"gamma":"0.75"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"lightness":"-37"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f9f9f9"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"saturation":"-100"},{"lightness":"40"},{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"labels.text.fill","stylers":[{"saturation":"-100"},{"lightness":"-37"}]},{"featureType":"landscape.natural","elementType":"labels.text.stroke","stylers":[{"saturation":"-100"},{"lightness":"100"},{"weight":"2"}]},{"featureType":"landscape.natural","elementType":"labels.icon","stylers":[{"saturation":"-100"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"saturation":"-100"},{"lightness":"80"}]},{"featureType":"poi","elementType":"labels","stylers":[{"saturation":"-100"},{"lightness":"0"}]},{"featureType":"poi.attraction","elementType":"geometry","stylers":[{"lightness":"-4"},{"saturation":"-100"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"},{"visibility":"on"},{"saturation":"-95"},{"lightness":"62"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road","elementType":"labels","stylers":[{"saturation":"-100"},{"gamma":"1.00"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"gamma":"0.50"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"saturation":"-100"},{"gamma":"0.50"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"},{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"lightness":"-13"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"lightness":"0"},{"gamma":"1.09"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"},{"saturation":"-100"},{"lightness":"47"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"lightness":"-12"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"saturation":"-100"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"},{"lightness":"77"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"lightness":"-5"},{"saturation":"-100"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"saturation":"-100"},{"lightness":"-15"}]},{"featureType":"transit.station.airport","elementType":"geometry","stylers":[{"lightness":"47"},{"saturation":"-100"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]},{"featureType":"water","elementType":"geometry","stylers":[{"saturation":"53"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"lightness":"-42"},{"saturation":"17"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"lightness":"61"}]}]);
-
-      }
-    </script>
-    
-    
 {% endblock content %}
