@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils import timezone
+from PIL import Image 
 
 # Create your models here.
 
@@ -39,3 +40,20 @@ class TaxTool(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Client(models.Model):
+    logo = models.ImageField(upload_to="clients/", max_length=100)
+
+    def __str__(self) -> str:
+        return f"Client {self.id + 1}"
+
+    def save(self, *args, **kwargs):
+        super(Client, self).save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        if img.height > 200 or img.width > 200:
+            output_size = (200,200)
+            img.thumbnail(output_size)
+            img.save(self.image.path)

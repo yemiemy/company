@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Testimonial, New, TaxInformation, TaxTool
+from core.models import Testimonial, New, TaxInformation, TaxTool, Client
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -10,7 +10,8 @@ def home(request):
     context = {
         'home_current': 'current',
         'testimonials': Testimonial.objects.order_by('-id'),
-        'news': New.objects.order_by('-created_at')
+        'news': New.objects.order_by('-created_at'),
+        'clients': Client.objects.all()
     }
     return render(request, "index.html", context)
 
