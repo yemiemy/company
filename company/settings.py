@@ -25,7 +25,7 @@ DEBUG = True
 
 if not DEBUG:
     import json
-    with open('/etc/config.json') as config_file:
+    with open('/etc/dkc_config.json', 'r', encoding='utf-8') as config_file:
         config = json.load(config_file)
 else:
     config = {
@@ -35,7 +35,7 @@ else:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config.get("SECRET_KEY")
 
-ALLOWED_HOSTS = ['74.208.23.102']
+ALLOWED_HOSTS = ['74.208.110.36']
 
 
 # Application definition
@@ -147,5 +147,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config.get("EMAIL_USER_com") #os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = config.get("EMAIL_PASS_com") #os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = config.get("EMAIL_USER") #os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config.get("EMAIL_PASS") #os.environ.get('EMAIL_PASS')
