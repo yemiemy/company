@@ -21,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if not DEBUG:
     import json
-    with open('/etc/dkc_config.json', 'r', encoding='utf-8') as config_file:
+    with open('/etc/company_config.json', 'r', encoding='utf-8') as config_file:
         config = json.load(config_file)
 else:
     config = {
@@ -35,7 +35,7 @@ else:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config.get("SECRET_KEY")
 
-ALLOWED_HOSTS = ['74.208.110.36']
+ALLOWED_HOSTS = ['dkcconsulting.ca', 'www.dkcconsulting.ca']
 
 
 # Application definition
@@ -88,10 +88,21 @@ WSGI_APPLICATION = 'company.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dkc_db',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'PORT': '5432'
     }
 }
 
